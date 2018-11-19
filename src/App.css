@@ -1,0 +1,8 @@
+#main-canvas {
+  background: #ccc;
+  background: url("./images/bg-canvas.png");
+  background-repeat: repeat;
+  border: 1px solid #ececec;
+  margin: 10px auto;
+  display: block;
+}
