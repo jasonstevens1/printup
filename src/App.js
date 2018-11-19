@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-import FabricCanvas from "./components/FabricCanvas";
 import { fabric } from "fabric";
 import "./App.css";
+
+import FabricCanvas from "./components/FabricCanvas";
+import CanvasHeader from "./components/CanvasHeader";
+import CanvasFooter from "./components/CanvasFooter";
 
 class App extends Component {
   constructor(props) {
@@ -14,8 +17,8 @@ class App extends Component {
 
   addToCanvas = (imgElement, property_type, z_Index) => {
     var imgInstance = new fabric.Image(imgElement, {
-      width: 1024,
-      height: 768,
+      width: 1200,
+      height: 1800,
       the_type: property_type,
       zIndex: z_Index
     });
@@ -25,14 +28,22 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="main">
-          <div className="row">
-            <div className="col-md-12">
-              <FabricCanvas activeProperty={this.state.activeProperty} />
-            </div>
-          </div>
+      <div>
+        <CanvasHeader />
+        <div id="content">
+          <center>
+            <table cellSpacing="0" cellPadding="0" id="canvas_editor_table">
+              <tbody>
+                <tr>
+                  <td id="canvas_bg">
+                    <FabricCanvas activeProperty={this.state.activeProperty} />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </center>
         </div>
+        <CanvasFooter />
       </div>
     );
   }

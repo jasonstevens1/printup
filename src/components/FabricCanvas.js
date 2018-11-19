@@ -1,4 +1,4 @@
-// FabricCanvas Component by Ali Zohaib
+// Based on FabricCanvas Component by Ali Zohaib
 // https://github.com/alizohaib/avatar-maker
 
 import React from "react";
@@ -9,8 +9,8 @@ class FabricCanvas extends React.Component {
     // Make a New Canvas
     this.the_canvas = new fabric.StaticCanvas("main-canvas", {
       preserveObjectStacking: true,
-      width: 1024,
-      height: 768
+      width: 200,
+      height: 800
     });
   }
 
@@ -58,15 +58,7 @@ class FabricCanvas extends React.Component {
   render() {
     return (
       <div className="main-canvas-container">
-        <canvas id="main-canvas" />
-
-        <button
-          type="button"
-          className="btn btn-success"
-          onClick={this.saveToCanvas}
-        >
-          Download Image
-        </button>
+        <canvas id="imageCanvas" />
       </div>
     );
   }
